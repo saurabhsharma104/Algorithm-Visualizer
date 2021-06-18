@@ -32,7 +32,8 @@ public class DrawChart extends JFrame {
 	
 	public static JFreeChart drawChart(int arr[]) {
 	     
-	    CategoryDataset dataset = createDataset(arr);  
+	    CategoryDataset dataset = createDataset(arr);
+	    
 	      
 	    //Create chart  
 	    JFreeChart chart=ChartFactory.createBarChart(  
@@ -42,7 +43,7 @@ public class DrawChart extends JFrame {
 	        dataset,  
 	        PlotOrientation.VERTICAL,  
 	        false,true,false  
-	       );  
+	       );
 	  
 	    return chart; 
 	  }  

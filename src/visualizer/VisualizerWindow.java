@@ -12,16 +12,19 @@ import javax.swing.JLabel;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-import drawbarchart.DrawChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 import java.awt.Choice;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class VisualizerWindow {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JTextField txtArraySize;
 	private JTextArea txtArrayElement;
 	public static JPanel panel_3;
@@ -53,7 +56,9 @@ public class VisualizerWindow {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
+		final String ROW_KEY = "Values";
+	//	final Random r = new Random();
+		final DefaultCategoryDataset model = new DefaultCategoryDataset();
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.textHighlight);
 		frame.setBounds(60, 30, 1280, 700);
@@ -189,12 +194,13 @@ public class VisualizerWindow {
 		panel_2_1.add(btnNewButton_8);
 		
 		JButton btnNewButton_9 = new JButton("Start");
+		
 		btnNewButton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(txtArrayElement.getText().isEmpty() || txtArraySize.getText().isEmpty()) {
 					int arr[] = {5,7,12,6,3,12,6,18,8,6,2};
-					txtArrayElement.setText("Done if blook");
-					drawChartFromArray(arr);
+					for(int i = 0;i<arr.length;i++)      
+						model.setValue(arr[i], ROW_KEY,Integer.valueOf(arr[i]));
 				}
 				else
 				{
@@ -203,12 +209,13 @@ public class VisualizerWindow {
 					for(int i =0;i<temp.length;i++) {
 						arr[i] = Integer.valueOf(temp[i]);
 					}
-					txtArrayElement.setText("Done else blook");
-					drawChartFromArray(arr);
+					for(int i = 0;i<arr.length;i++)      
+						model.setValue(arr[i], ROW_KEY,Integer.valueOf(arr[i]));
 				}
 				
 			}
 		});
+		
 		btnNewButton_9.setBounds(234, 11, 89, 23);
 		btnNewButton_9.setFont(new Font("Times New Roman Greek", Font.BOLD, 18));
 		btnNewButton_9.setBackground(Color.GREEN);
@@ -227,20 +234,19 @@ public class VisualizerWindow {
 		panel_2_1_1.add(lblNewLabel_4);
 		
 		int arr[] = {5,7,12,6,3,12,6,18,8,6,2,6,12,15,8,19,13,11};
-		JFreeChart chart = DrawChart.drawChart(arr);
-		ChartPanel chartpanel=new ChartPanel(chart);
-		chartpanel.setBounds(255, 131, 980, 494);
-		frame.getContentPane().add(chartpanel);
+        
+        for(int i =0;i<arr.length;i++)
+	    	model.addValue(arr[i], "Array Elements",String.valueOf(arr[i]));
+        
+        JFreeChart chart = ChartFactory.createBarChart("Proxi", "Sensors",
+            "Value", model, PlotOrientation.VERTICAL, false, true, false);
+        ChartPanel barPanel = new ChartPanel(chart);
+    
+        barPanel.setBounds(255, 131, 980, 494);
+        frame.getContentPane().add(barPanel);
 		
 		frame.setBackground(Color.blue);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}		
+		
 	}
-	
-	
-	void drawChartFromArray(int arr[]) {
-		JFreeChart chart = DrawChart.drawChart(arr);
-		ChartPanel chartpanel=new ChartPanel(chart);
-		chartpanel.setBounds(255, 131, 980, 494);
-		frame.getContentPane().add(chartpanel);
-	}
-}
