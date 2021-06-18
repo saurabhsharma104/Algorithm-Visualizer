@@ -74,8 +74,9 @@ public class HomeWindow {
 		btnNewButton_3.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				MainWindow mainWindow = new MainWindow();
-				mainWindow.open();
+				//MainWindow mainWindow = new MainWindow();
+				//mainWindow.open();
+				VisualizerWindow.main(null);
 			}
 		});
 		

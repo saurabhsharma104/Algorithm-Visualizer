@@ -13,9 +13,6 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 public class DrawChart extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
@@ -25,48 +22,42 @@ public class DrawChart extends JFrame {
 	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(5, 5,5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
-		//setContentPane(contentPane);
-	  
+		int arr[] = {5,2,8,4,7};
+		JFreeChart chart = drawChart(arr);
+		ChartPanel panel=new ChartPanel(chart);  
+	    setContentPane(panel); 
+	}
+	
+	public static JFreeChart drawChart(int arr[]) {
 	     
-	    CategoryDataset dataset = createDataset();  
+	    CategoryDataset dataset = createDataset(arr);  
 	      
 	    //Create chart  
 	    JFreeChart chart=ChartFactory.createBarChart(  
 	        "Bar Chart Example", //Chart Title  
-	        "Year", // Category axis  
-	        "Population in Million", // Value axis  
+	        "No of Element",         // Category axis  
+	        "Array Element Size", // Value axis  
 	        dataset,  
 	        PlotOrientation.VERTICAL,  
-	        true,true,false  
+	        false,true,false  
 	       );  
 	  
-	    ChartPanel panel=new ChartPanel(chart);  
-	    setContentPane(panel);  
+	    return chart; 
 	  }  
 	  
-	  private CategoryDataset createDataset() {  
+	  public static CategoryDataset createDataset(int arr[]) {  
 	    DefaultCategoryDataset dataset = new DefaultCategoryDataset();  
-	  
-	    // Population in 2005  
-	    dataset.addValue(10, "USA", "2005");  
-	    dataset.addValue(15, "India", "2005");  
-	    dataset.addValue(20, "China", "2005");  
-	  
-	    // Population in 2010  
-	    dataset.addValue(15, "USA", "2010");  
-	    dataset.addValue(20, "India", "2010");  
-	    dataset.addValue(25, "China", "2010");  
-	  
-	    // Population in 2015  
-	    dataset.addValue(20, "USA", "2015");  
-	    dataset.addValue(25, "India", "2015");  
-	    dataset.addValue(30, "China", "2015");  
-	  
+	    for(int i =0;i<arr.length;i++) {
+	    	dataset.addValue(arr[i], "Array Elements",String.valueOf(arr[i]));
+	    }
+	    
+	   //dataset.addValue(15);  
+	   // dataset.addValue(20, "China", "2005");  
+	    
 	    return dataset;  
 	  }  
-
 	/**
 	 * Launch the application.
 	 */
@@ -81,8 +72,5 @@ public class DrawChart extends JFrame {
 				}
 			}
 		});
-	}
-
-
-			
+	}		
 }
