@@ -10,11 +10,7 @@ public class HomeWindow {
 	protected Shell shell;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
 	Display display;
-
-	/**
-	 * Launch the application.
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
 		try {
 			HomeWindow window = new HomeWindow();
@@ -74,8 +70,6 @@ public class HomeWindow {
 		btnNewButton_3.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				//MainWindow mainWindow = new MainWindow();
-				//mainWindow.open();
 				VisualizerWindow.main(null);
 			}
 		});

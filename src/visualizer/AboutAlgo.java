@@ -67,7 +67,7 @@ public class AboutAlgo {
 		
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBackground(SWTResourceManager.getColor(255, 215, 0));
-		composite.setBounds(10, 114, 200, 497);
+		composite.setBounds(23, 114, 200, 497);
 		
 		Button algorithm = new Button(composite, SWT.NONE);
 		algorithm.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.NORMAL));
@@ -106,11 +106,6 @@ public class AboutAlgo {
 		composite_1.setBackground(SWTResourceManager.getColor(255, 215, 0));
 		composite_1.setBounds(342, 166, 532, 390);
 		
-		Label content = new Label(composite_1, SWT.NONE);
-		content.setFont(SWTResourceManager.getFont("Segoe UI", 11, SWT.NORMAL));
-		content.setBounds(45, 54, 442, 309);
-		content.setText("Click On Button ");
-		
 		Button btnNewButton_8 = new Button(composite_1, SWT.NONE);
 		btnNewButton_8.setImage(SWTResourceManager.getImage("D:\\Algorithm Visualizer\\Image\\lt.jpg"));
 		btnNewButton_8.setBounds(10, 167, 29, 25);
@@ -118,6 +113,13 @@ public class AboutAlgo {
 		Button btnNewButton_9 = new Button(composite_1, SWT.NONE);
 		btnNewButton_9.setImage(SWTResourceManager.getImage("D:\\Algorithm Visualizer\\Image\\gt.jpg"));
 		btnNewButton_9.setBounds(493, 167, 29, 25);
+		
+		Label lblNewLabel_1 = new Label(composite_1, SWT.HORIZONTAL);
+		lblNewLabel_1.setAlignment(SWT.CENTER);
+		lblNewLabel_1.setFont(SWTResourceManager.getFont("Segoe UI", 14, SWT.BOLD));
+		lblNewLabel_1.setTouchEnabled(true);
+		lblNewLabel_1.setBounds(56, 66, 420, 280);
+		lblNewLabel_1.setText("Click On Button");
 		
 		Label title = new Label(shell, SWT.NONE);
 		title.setFont(SWTResourceManager.getFont("Sitka Small", 21, SWT.BOLD));
@@ -149,9 +151,9 @@ public class AboutAlgo {
 			            while((text = br.readLine()) != null) {
 			                if (text.contains("<STUFF>")) {
 			                    text = text.replace("<STUFF>", "This is text to replace \"<STUFF>\"");
-			                    content.setText(text);
+			                    lblNewLabel_1.setText(text);
 			                } else {
-			                	content.setText(text);
+			                	lblNewLabel_1.setText(text);
 			                }
 			            }
 			        } catch (IOException e1) {
@@ -165,15 +167,15 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(sorting.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\algorithm.txt";
+				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\sorting.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
 			                if (text.contains("<STUFF>")) {
 			                    text = text.replace("<STUFF>", "This is text to replace \"<STUFF>\"");
-			                    content.setText(text);
+			                    lblNewLabel_1.setText(text);
 			                } else {
-			                	content.setText(text);
+			                	lblNewLabel_1.setText(text);
 			                }
 			            }
 			        } catch (IOException e1) {
@@ -186,15 +188,15 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(bubble.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\algorithm.txt";
+				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\bubble.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
 			                if (text.contains("<STUFF>")) {
 			                    text = text.replace("<STUFF>", "This is text to replace \"<STUFF>\"");
-			                    content.setText(text);
+			                    lblNewLabel_1.setText(text);
 			                } else {
-			                	content.setText(text);
+			                	lblNewLabel_1.setText(text);
 			                }
 			            }
 			        } catch (IOException e1) {
@@ -207,15 +209,15 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(count.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\algorithm.txt";
+				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\count.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
 			                if (text.contains("<STUFF>")) {
 			                    text = text.replace("<STUFF>", "This is text to replace \"<STUFF>\"");
-			                    content.setText(text);
+			                    lblNewLabel_1.setText(text);
 			                } else {
-			                	content.setText(text);
+			                	lblNewLabel_1.setText(text);
 			                }
 			            }
 			        } catch (IOException e1) {
@@ -228,15 +230,15 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(selection.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\algorithm.txt";
+				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\selection.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
 			                if (text.contains("<STUFF>")) {
 			                    text = text.replace("<STUFF>", "This is text to replace \"<STUFF>\"");
-			                    content.setText(text);
+			                    lblNewLabel_1.setText(text);
 			                } else {
-			                	content.setText(text);
+			                	lblNewLabel_1.setText(text);
 			                }
 			            }
 			        } catch (IOException e1) {
@@ -249,15 +251,15 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(quick.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\algorithm.txt";
+				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\quick.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
 			                if (text.contains("<STUFF>")) {
 			                    text = text.replace("<STUFF>", "This is text to replace \"<STUFF>\"");
-			                    content.setText(text);
+			                    lblNewLabel_1.setText(text);
 			                } else {
-			                	content.setText(text);
+			                	lblNewLabel_1.setText(text);
 			                }
 			            }
 			        } catch (IOException e1) {
@@ -270,15 +272,15 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(marge.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\algorithm.txt";
+				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\marge.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
 			                if (text.contains("<STUFF>")) {
 			                    text = text.replace("<STUFF>", "This is text to replace \"<STUFF>\"");
-			                    content.setText(text);
+			                    lblNewLabel_1.setText(text);
 			                } else {
-			                	content.setText(text);
+			                	lblNewLabel_1.setText(text);
 			                }
 			            }
 			        } catch (IOException e1) {
@@ -291,15 +293,15 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(insertion.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\algorithm.txt";
+				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\insertion.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
 			                if (text.contains("<STUFF>")) {
 			                    text = text.replace("<STUFF>", "This is text to replace \"<STUFF>\"");
-			                    content.setText(text);
+			                    lblNewLabel_1.setText(text);
 			                } else {
-			                	content.setText(text);
+			                	lblNewLabel_1.setText(text);
 			                }
 			            }
 			        } catch (IOException e1) {
