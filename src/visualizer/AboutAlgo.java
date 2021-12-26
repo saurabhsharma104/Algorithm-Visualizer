@@ -52,7 +52,8 @@ public class AboutAlgo {
 		
 		
 		shell = new Shell(SWT.CLOSE | SWT.TITLE | SWT.MIN);
-		shell.setBackgroundImage(SWTResourceManager.getImage("D:\\Algorithm Visualizer\\Image\\background.jpg"));
+		shell.setImage(SWTResourceManager.getImage("Image\\logo.png"));
+		shell.setBackgroundImage(SWTResourceManager.getImage("Image\\background.jpg"));
 		shell.setSize(1000,650);
 		shell.setLocation(200,50);
 		shell.setText("Algorithm.Visualizer");
@@ -107,11 +108,11 @@ public class AboutAlgo {
 		composite_1.setBounds(342, 166, 532, 390);
 		
 		Button btnNewButton_8 = new Button(composite_1, SWT.NONE);
-		btnNewButton_8.setImage(SWTResourceManager.getImage("D:\\Algorithm Visualizer\\Image\\lt.jpg"));
+		btnNewButton_8.setImage(SWTResourceManager.getImage("Image\\lt.jpg"));
 		btnNewButton_8.setBounds(10, 167, 29, 25);
 		
 		Button btnNewButton_9 = new Button(composite_1, SWT.NONE);
-		btnNewButton_9.setImage(SWTResourceManager.getImage("D:\\Algorithm Visualizer\\Image\\gt.jpg"));
+		btnNewButton_9.setImage(SWTResourceManager.getImage("Image\\gt.jpg"));
 		btnNewButton_9.setBounds(493, 167, 29, 25);
 		
 		Label lblNewLabel_1 = new Label(composite_1, SWT.HORIZONTAL);
@@ -145,7 +146,7 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(algorithm.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\algorithm.txt";
+				final String fileLoc = "Tutorial\\algorithm.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
@@ -167,7 +168,7 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(sorting.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\sorting.txt";
+				final String fileLoc = "Tutorial\\sorting.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
@@ -188,7 +189,7 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(bubble.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\bubble.txt";
+				final String fileLoc = "Tutorial\\bubble.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
@@ -209,7 +210,7 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(count.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\count.txt";
+				final String fileLoc = "Tutorial\\count.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
@@ -230,7 +231,7 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(selection.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\selection.txt";
+				final String fileLoc = "Tutorial\\selection.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
@@ -251,7 +252,7 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(quick.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\quick.txt";
+				final String fileLoc = "Tutorial\\quick.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
@@ -272,7 +273,7 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(marge.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\marge.txt";
+				final String fileLoc = "Tutorial\\marge.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {
@@ -293,7 +294,7 @@ public class AboutAlgo {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				title.setText(insertion.getText());
-				final String fileLoc = "D:\\Algorithm Visualizer\\Tutorial\\insertion.txt";
+				final String fileLoc = "Tutorial\\insertion.txt";
 				 String text;
 			        try (BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
 			            while((text = br.readLine()) != null) {

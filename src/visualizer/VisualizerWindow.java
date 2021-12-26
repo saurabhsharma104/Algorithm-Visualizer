@@ -21,20 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import program.BubbleSort;
-import program.CocktailShakerSort;
-import program.Column;
-import program.ColumnPanel;
-import program.CombSort;
-import program.CountingSort;
-import program.GnomeSort;
-import program.HeapSort;
-import program.InsertSort;
-import program.MergeSort;
-import program.QuickSort;
-import program.SelectSort;
-import program.ShellSort;
-import program.SortingAlgorithm;
+import program.*;
 
 public class VisualizerWindow {
 
@@ -76,7 +63,10 @@ public class VisualizerWindow {
 
 	private void initialize() {
 		
-		frame = new JFrame();
+		frame = new JFrame("Algorithm Visualizer");
+		frame.setFont(new Font("Bookman Old Style", Font.BOLD, 16));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\Algorithm Visualizer\\Image\\logo.png"));
+		frame.setResizable(false);
 		frame.getContentPane().setBackground(SystemColor.textHighlight);
 		frame.setBounds(60, 30, 1280, 700);
 		frame.getContentPane().setLayout(null);
@@ -95,6 +85,7 @@ public class VisualizerWindow {
 		txtArraySize.setColumns(20);
 		
 		txtArrayElement = new JTextArea();
+		txtArrayElement.setLineWrap(true);
 		txtArrayElement.setFont(new Font("Tahoma", Font.BOLD, 13));
 		txtArrayElement.setBounds(10, 188, 215, 356);
 		panel.add(txtArrayElement);
@@ -263,10 +254,7 @@ public class VisualizerWindow {
                 sortingAlgorithms.setVisible(true);
                 sortingAlgorithms.addItem(new InsertSort(sortingSleepTime));
                 sortingAlgorithms.addItem(new BubbleSort(sortingSleepTime));
-                sortingAlgorithms.addItem(new CocktailShakerSort(sortingSleepTime));
-                sortingAlgorithms.addItem(new CombSort(sortingSleepTime));
                 sortingAlgorithms.addItem(new SelectSort(sortingSleepTime));
-                sortingAlgorithms.addItem(new GnomeSort(sortingSleepTime));
                 sortingAlgorithms.addItem(new ShellSort(sortingSleepTime));
                 sortingAlgorithms.addItem(new HeapSort(sortingSleepTime));
                 sortingAlgorithms.addItem(new MergeSort(sortingSleepTime));
@@ -373,7 +361,7 @@ public class VisualizerWindow {
 				try {
 					size = Integer.parseInt(txtArraySize.getText().toString());
 					String temp[] = (txtArrayElement.getText().toString()).split(",");
-					if(size != temp.length || temp[0].isEmpty()) {
+					if(temp.length == 0 ) {
 						lblNewLabel_2.setText("Your Input is invalid...");
 						obj.setCounts(size,true,true);
 					}
